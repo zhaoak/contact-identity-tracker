@@ -16,7 +16,8 @@ public class GroupsController : Controller
 
   public ActionResult Index()
   {
-    return View();
+    List<Group> model = _db.Groups.ToList();
+    return View(model);
   }
 
   public ActionResult Create()

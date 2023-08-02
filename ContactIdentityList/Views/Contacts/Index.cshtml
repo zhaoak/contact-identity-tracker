@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Full Contact List</h2>
+
+@using ContactIdentityList.Models;
+
+@if (Model.Count == 0)
+{
+  <p><em>No contacts.</em></p>
+}
+else
+{
+  <ul>
+  @foreach (Contact contact in Model)
+  {
+    <li>@Html.ActionLink("@contact.FullName", "Details", "Contacts")</li>
+  }
+  </ul>
+}

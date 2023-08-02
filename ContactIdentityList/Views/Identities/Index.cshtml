@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Full Identity List</h2>
+
+@using ContactIdentityList.Models;
+
+@if (Model.Count == 0)
+{
+  <p><em>No identities.</em></p>
+}
+else
+{
+  <ul>
+  @foreach (Identity identity in Model)
+  {
+    <li>@Html.ActionLink("@identity.Type", "Details", "Identities") | @Html.ActionLink("@identity.Contact.FullName", "Details", "Contacts")</li>
+  }
+  </ul>
+}

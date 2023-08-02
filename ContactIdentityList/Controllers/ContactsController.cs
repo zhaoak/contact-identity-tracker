@@ -16,7 +16,8 @@ public class ContactsController : Controller
 
   public ActionResult Index()
   {
-    return View();
+    List<Contact> model = _db.Contacts.ToList();
+    return View(model);
   }
 
   public ActionResult Create()

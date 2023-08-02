@@ -16,7 +16,8 @@ public class IdentitiesController : Controller
 
   public ActionResult Index()
   {
-    return View();
+    List<Identity> model = _db.Identities.ToList();
+    return View(model);
   }
 
   public ActionResult Create()
