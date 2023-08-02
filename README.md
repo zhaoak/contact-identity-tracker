@@ -16,6 +16,8 @@ Practice application built out for Epicodus.
 - Should be able to enter new identities for contacts, which are individual 
   presences on various services (phone number, online chat services, social 
   media, etc)
+- Should be able to put contacts in any number of groups (for organizing based 
+- on work, other types of contacts
 
 ### Using
 
