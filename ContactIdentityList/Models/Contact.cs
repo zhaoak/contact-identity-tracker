@@ -12,5 +12,4 @@ public class Contact
 
   public List<Identity> Identities { get; set; }
   public List<ContactGroup> JoinEntities { get; }
-
 }

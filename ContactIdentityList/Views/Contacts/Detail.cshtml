@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@using ContactIdentityList.Models
+@model ContactIdentityList.Models.Contact
+
+<h2>Contact Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.FullName): @Html.DisplayFor(model => model.FullName)<h3>
+
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This item is not in any groups yet.</p>
+}
+else
+{
+  <h5>In groups:</h5>
+  <ul>
+  @foreach (ContactGroup join in Model.JoinEntities)
+  {
+    <li>@join.Group.Name</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.ContactId })</p>
+<p>@Html.ActionLink("Add a tag to this item", "AddTag", new { id = Model.ContactId })</p>
+<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.ContactId })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>

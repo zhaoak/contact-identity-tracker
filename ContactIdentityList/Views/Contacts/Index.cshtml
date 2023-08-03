@@ -17,7 +17,7 @@ else
   <ul>
   @foreach (Contact contact in Model)
   {
-    <li>@Html.ActionLink(@contact.FullName, "Details", "Contacts")</li>
+  <li>@Html.ActionLink(@contact.FullName, "Detail", "Contacts", new { contactId = contact.ContactId } )</li>
   }
   </ul>
 }

@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using ContactIdentityList.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,5 +43,16 @@ public class ContactsController : Controller
     _db.SaveChanges();
     return RedirectToAction("Index");
     }
+  }
+
+  // contact detail page
+  public ActionResult Detail(int contactId)
+  {
+    Contact thisContact = _db.Contacts
+                                   .Include(contact => contact.JoinEntities)
+                                   .ThenInclude(join => join.Group)
+                                   .Include(contact => contact.Identities)
+                                   .FirstOrDefault(contact => contact.ContactId == contactId);
+    return View(thisContact);
   }
 }
