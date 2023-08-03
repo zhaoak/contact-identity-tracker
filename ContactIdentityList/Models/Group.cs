@@ -5,7 +5,6 @@ namespace ContactIdentityList.Models;
 
 public class Group
 {
-  [Range(1, int.MaxValue)]
   public int GroupId { get; set; }
   [Required(ErrorMessage = "A group must have a name.")]
   public string Name { get; set; }

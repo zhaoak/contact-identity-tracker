@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ContactIdentityList.Models.Group
+
+<h3>Add new group</h3>
+<hr>
+
+<p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;"})</p>
+<br>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <br>
+
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+  <br>
+
+  <input type="submit" value="Add new group" class="btn btn-default" />
+  <br>
+}

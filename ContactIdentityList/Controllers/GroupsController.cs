@@ -24,4 +24,19 @@ public class GroupsController : Controller
   {
     return View();
   }
+
+  [HttpPost]
+  public ActionResult Create(Group group)
+  {
+    if (ModelState.IsValid == false)
+    {
+      return View(group);
+    }
+    else
+    {
+    _db.Groups.Add(group);
+    _db.SaveChanges();
+    return RedirectToAction("Index");
+    }
+  }
 }

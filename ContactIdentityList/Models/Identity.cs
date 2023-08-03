@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 public class Identity
 {
-  [Range(1, int.MaxValue)]
   public int IdentityId { get; set; }
   [Required(ErrorMessage = "An identity must have a type to distinguish it from others.")]
   public string Type { get; set; } // type of identity--website, phone, etc

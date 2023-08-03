@@ -6,6 +6,8 @@
 
 @using ContactIdentityList.Models;
 
+<hr>
+
 @if (Model.Count == 0)
 {
   <p><em>No contacts.</em></p>
@@ -15,7 +17,9 @@ else
   <ul>
   @foreach (Contact contact in Model)
   {
-    <li>@Html.ActionLink("@contact.FullName", "Details", "Contacts")</li>
+    <li>@Html.ActionLink(@contact.FullName, "Details", "Contacts")</li>
   }
   </ul>
 }
+
+<strong>@Html.ActionLink("Create new contact", "Create", "Contacts")</strong>

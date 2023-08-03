@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ContactIdentityList.Models.Identity
+
+<h3>Add new identity</h3>
+<hr>
+
+<p>@Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger", @style = "font-weight: 600;"})</p>
+<br>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
+  <br>
+
+  @Html.LabelFor(model => model.Identifier)
+  @Html.TextBoxFor(model => model.Identifier)
+  <br>
+
+  @Html.LabelFor(model => model.ProfileURL)
+  @Html.TextBoxFor(model => model.ProfileURL)
+  <br>
+
+  @Html.LabelFor(model => model.Notes)
+  @Html.TextBoxFor(model => model.Notes)
+  <br>
+
+  @Html.LabelFor(model => model.Contact)
+  @Html.DropDownList("ContactId")
+  <br>
+
+  <input type="submit" value="Add new identity" class="btn btn-default" />
+  <br>
+}

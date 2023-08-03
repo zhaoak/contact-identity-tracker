@@ -5,7 +5,6 @@ namespace ContactIdentityList.Models;
 
 public class Contact
 {
-  [Range(1, int.MaxValue)]
   public int ContactId { get; set; }
   public string ShortName { get; set; }
   [Required(ErrorMessage = "A contact must have a name.")]

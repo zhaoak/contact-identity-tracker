@@ -15,7 +15,9 @@ else
   <ul>
   @foreach (Identity identity in Model)
   {
-    <li>@Html.ActionLink("@identity.Type", "Details", "Identities") | @Html.ActionLink("@identity.Contact.FullName", "Details", "Contacts")</li>
+    <li>@Html.ActionLink(@identity.Type, "Details", "Identities") | @Html.ActionLink(@identity.Contact.FullName, "Details", "Contacts")</li>
   }
   </ul>
 }
+
+<strong>@Html.ActionLink("Add new identity", "Create", "Identities")</strong>

@@ -15,7 +15,9 @@ else
   <ul>
   @foreach (Group group in Model)
   {
-    <li>@Html.ActionLink("@group.Name", "Details", "Identities")</li>
+    <li>@Html.ActionLink(@group.Name, "Details", "Identities")</li>
   }
   </ul>
 }
+
+<strong>@Html.ActionLink("Add new group", "Create", "Groups")</strong>
